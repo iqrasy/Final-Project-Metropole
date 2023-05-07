@@ -26,7 +26,6 @@ const Form = () => {
   const handleSubmit = (e, form) => {
     // prevents form from submitting
     e.preventDefault();
-    console.log(form);
 
     const params = [];
     // loops through each entry in the query and adds it to the params array
@@ -60,8 +59,6 @@ const Form = () => {
       endpoint = "/api/attractionres";
       body.attraction = params[1][1];
     }
-
-    console.log(params);
 
     // POST request to "endpoint" URL with the body object
     fetch(endpoint, {

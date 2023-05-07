@@ -23,7 +23,7 @@ const Account = () => {
   // getInputProps: a function that returns a set of props that need to be added to an input element within the dropzone.
   // isDragActive: a boolean that is true when a user is currently dragging a file over the dropzone, and false otherwise
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
-  console.log(picture);
+
   // loading
   if (isLoading) {
     return <div>Loading ...</div>;

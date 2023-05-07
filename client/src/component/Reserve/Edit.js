@@ -116,7 +116,7 @@ const Edit = () => {
                 required={true}
                 onChange={handleForm}
               >
-                <option value="" disabled selected>
+                <option value="" disabled>
                   Guests
                 </option>
                 <option>1</option>
