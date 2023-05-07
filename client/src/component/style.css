@@ -1,0 +1,16 @@
+.leaflet-container {
+  width: 40em;
+  height: 39.5em;
+  border-radius: 1em;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: white;
+  color: black;
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}

@@ -9,12 +9,14 @@
     "delay": "^5.0.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-openid-connect": "^2.13.0",
     "mongodb": "^5.1.0",
     "morgan": "^1.10.0",
     "node": "^16.17.0",
     "node-fetch": "^3.3.1",
     "nodemon": "^2.0.21",
-    "express-openid-connect": "^2.13.0"
+    "uuid": "^9.0.0",
+    "uuid4": "^2.0.3"
   },
   "scripts": {
     "start": "node server.js",

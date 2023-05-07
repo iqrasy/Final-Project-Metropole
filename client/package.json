@@ -6,11 +6,19 @@
   "keywords": [],
   "main": "index.js",
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@auth0/auth0-react": "^2.0.1",
+    "leaflet": "^1.8.0",
+    "moment": "^2.29.4",
+    "ol": "^7.3.0",
+    "openlayers": "^4.6.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-dropzone": "^14.2.3",
     "react-icons": "^4.8.0",
+    "react-leaflet": "^4.2.1",
+    "react-openlayers": "^0.3.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "styled-components": "^5.3.5"
   },
   "resolutions": {
@@ -24,16 +32,9 @@
   },
   "author": "",
   "license": "ISC",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
 }
