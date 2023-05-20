@@ -174,10 +174,6 @@ const FormWrapper = styled.div`
   align-items: center;
   height: 90.7vh;
   margin: auto 0px auto;
-
-  /* @media only screen and (max-width: 768px) {
-    height: 80vh;
-  } */
 `;
 
 const Forms = styled.form`
@@ -200,10 +196,6 @@ const Input = styled.input`
     outline: none;
     border: none;
   }
-
-  /* @media only screen and (max-width: 768px) {
-    font-size: 15px;
-  } */
 `;
 
 const Submit = styled.button`

@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { BsGrid } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logout from "./Logout";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -10,10 +10,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRotated, setIsRotated] = useState(false);
 
-  //
   const { isAuthenticated, user } = useAuth0();
-  const navigate = useNavigate();
-  const menuRef = useRef(null);
 
   // handle menu rotation
   const handleClick = () => {
@@ -24,20 +21,6 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  // const handleDocumentClick = (event) => {
-  //   if (menuRef.current && !menuRef.current.contains(event.target)) {
-  //     setIsMenuOpen(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener("click", handleDocumentClick);
-
-  //   return () => {
-  //     document.removeEventListener("click", handleDocumentClick);
-  //   };
-  // }, []);
 
   return (
     <>

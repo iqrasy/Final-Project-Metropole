@@ -146,10 +146,6 @@ const FormWrapper = styled.div`
   align-items: center;
   height: 80vh;
   margin: auto 0px auto;
-
-  /* @media only screen and (max-width: 768px) {
-    height: 80vh;
-  } */
 `;
 
 const Forms = styled.form`

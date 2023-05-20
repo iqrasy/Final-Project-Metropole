@@ -24,7 +24,6 @@ const Home = () => {
   return (
     <>
       <Main>
-        <WeatherDiv>{/* <Weather /> */}</WeatherDiv>
         <TravelDiv>
           <Travel
             coordinate={coordinate}
@@ -81,24 +80,9 @@ const Main = styled.div`
   position: absolute;
   top: 10%;
   left: 0;
-
-  /* @media only screen and (max-width: 600px) {
-    min-width: 800px;
-    margin: 0 auto;
-  } */
-`;
-
-const WeatherDiv = styled.div`
-  display: flex;
-  position: absolute;
-  right: 0.8em;
-  top: 5.5em;
 `;
 
 const TravelDiv = styled.div`
-  /* position: absolute;
-  bottom: 2%;
-  left: 1%; */
   display: flex;
   justify-content: center;
   align-items: center;

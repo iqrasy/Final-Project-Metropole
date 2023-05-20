@@ -32,7 +32,6 @@ const Restaurant = ({ search, setCoordinate, resto, setResto }) => {
   const handleResto = (restaurant) => {
     setRestoSelected(restaurant);
     setIsRestoSelected(true);
-
     // setting the coordinates to setCoordinate
     if (restaurant && restaurant.latitude && restaurant.longitude) {
       const { latitude, longitude } = restaurant;
@@ -118,19 +117,6 @@ const Restaurant = ({ search, setCoordinate, resto, setResto }) => {
 };
 
 export default Restaurant;
-
-const Icon = styled.div`
-  animation: spin 1s linear infinite;
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`;
 
 const Container = styled.div`
   max-height: 510px;
@@ -224,7 +210,7 @@ const Div = styled.div`
     position: absolute;
     bottom: 40%;
     right: 5em;
-    bottom: 16em;
+    bottom: 12em;
     float: right;
     border: none;
     background-color: #610f7f;

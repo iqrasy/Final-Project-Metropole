@@ -23,7 +23,6 @@ const Activities = ({ search, setCoordinate, activities, setActivities }) => {
   const handleActivity = (attraction) => {
     setActivitySelected(attraction);
     setIsActivitySelected(true);
-
     // setting the coordinates to setCoordinate
     if (attraction && attraction) {
       const { latitude, longitude } = attraction;
@@ -154,10 +153,7 @@ const Text = styled.div`
 `;
 
 const Info = styled.div`
-  /* border: solid blue 1px; */
-
   img {
-    /* float: left; */
     width: 13em;
     height: 13em;
     border-radius: 0.7em;
@@ -167,7 +163,6 @@ const Info = styled.div`
 `;
 
 const Title = styled.div`
-  /* border: solid blue 1px; */
   display: flex;
   float: right;
   flex-direction: column;
@@ -193,7 +188,6 @@ const Title = styled.div`
 `;
 
 const Div = styled.div`
-  /* border: solid red 1px; */
   margin: 0.5em 1em;
   width: 30em;
   position: relative;

@@ -31,7 +31,9 @@ const Footer = () => {
         <h4>Sign up for our weekly newsletter.</h4>
         <Input placeholder="Email" />
         <Arrow>
-          <BsArrowRightShort />
+          <button type="submit">
+            <BsArrowRightShort />
+          </button>
         </Arrow>
       </Newsletter>
     </Main>
@@ -111,4 +113,9 @@ const Arrow = styled.div`
   align-items: center;
   margin-left: 10px;
   font-size: 2em;
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
 `;
