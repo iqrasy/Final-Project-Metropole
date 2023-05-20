@@ -37,10 +37,8 @@ const Activities = ({ search, setCoordinate, activities, setActivities }) => {
 
   return (
     <Container>
-      {/* if user clicks on a button, this part of the code renders */}
       {isActivitySelected ? (
         <>
-          {/* link on icon that takes you back to list of all activites instead of clicking on something else to see the list again */}
           <Link to="#" onClick={() => setIsActivitySelected(false)}>
             <BiLeftArrowAlt />
           </Link>
@@ -66,9 +64,6 @@ const Activities = ({ search, setCoordinate, activities, setActivities }) => {
         </>
       ) : (
         filteredActivities.map((item, id) => {
-          {
-            /* if user doesnt click on a button, this part of the code renders */
-          }
           return (
             <div key={id}>
               <Button onClick={() => handleActivity(item)}>
@@ -154,8 +149,8 @@ const Text = styled.div`
 
 const Info = styled.div`
   img {
-    width: 13em;
-    height: 13em;
+    width: 23vh;
+    height: 23vh;
     border-radius: 0.7em;
     object-fit: cover;
     margin: 2em 1em;
@@ -166,7 +161,7 @@ const Title = styled.div`
   display: flex;
   float: right;
   flex-direction: column;
-  width: 40%;
+  width: 35%;
   margin: 7% 4% 0 0;
 
   p {
@@ -189,7 +184,7 @@ const Title = styled.div`
 
 const Div = styled.div`
   margin: 0.5em 1em;
-  width: 30em;
+  width: 28em;
   position: relative;
   display: flex;
   justify-content: flex-start;

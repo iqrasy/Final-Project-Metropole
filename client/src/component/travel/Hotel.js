@@ -47,13 +47,11 @@ const Hotel = ({ search, setCoordinate, hotels, setHotels }) => {
 
   return (
     <HotelContainer>
-      {/* if user clicks on a button, this part of the code renders */}
       {isHotelSelected ? (
         <>
-          {/* link on icon that takes you back to list of all activites instead of clicking on something else to see the list again */}
-          <StyledLink to="#" onClick={() => setIsHotelSelected(false)}>
+          <Link to="#" onClick={() => setIsHotelSelected(false)}>
             <BiLeftArrowAlt />
-          </StyledLink>
+          </Link>
           <Div>
             <Info>
               <Title>
@@ -76,9 +74,6 @@ const Hotel = ({ search, setCoordinate, hotels, setHotels }) => {
         </>
       ) : (
         hotels.map((item, id) => {
-          {
-            /* if user doesnt click on a button, this part of the code renders */
-          }
           return (
             <div key={id}>
               <Button onClick={() => handleHotel(item)}>
@@ -172,7 +167,7 @@ const Text = styled.div`
 
 const Div = styled.div`
   margin: 4em 1em;
-  width: 30em;
+  width: 28em;
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -181,8 +176,7 @@ const Div = styled.div`
   button {
     position: absolute;
     bottom: 13%;
-    right: 10%;
-    float: right;
+    right: 15%;
     border: none;
     background-color: #610f7f;
     color: #e3e3e3;
@@ -202,8 +196,8 @@ const Title = styled.div`
   display: flex;
   float: right;
   flex-direction: column;
-  width: 40%;
-  margin: 7% 4% 0 0;
+  width: 35%;
+  margin: 5% 15% 0 0;
 
   p {
     font-size: 0.8em;
@@ -227,21 +221,10 @@ const Info = styled.div`
   width: 100%;
 
   img {
-    width: 13em;
-    height: 13em;
+    width: 23vh;
+    height: 23vh;
     border-radius: 0.7em;
     object-fit: cover;
     margin: 2em 1em;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  color: #610f7f;
-  display: flex;
-  position: absolute;
-  left: 9em;
-
-  &:visited {
-    color: #610f7f;
   }
 `;

@@ -41,47 +41,41 @@ const Restaurant = ({ search, setCoordinate, resto, setResto }) => {
 
   return (
     <Container>
-      {/* if user clicks on a button, this part of the code renders */}
       {isRestoSelected ? (
         <>
-          {/* link on icon that takes you back to list of all activites instead of clicking on something else to see the list again */}
           <Link to="#" onClick={() => setIsRestoSelected(false)}>
             <BiLeftArrowAlt />
           </Link>
-          <Div>
+          <div>
+            {restoSelected.photo && restoSelected.photo.images && (
+              <Main>
+                <img src={restoSelected.photo.images.medium.url} />
+              </Main>
+            )}
             <Info>
-              <Title>
-                <p>{restoSelected.address}</p>
-                <p>{restoSelected.phone}</p>
-                <p>{restoSelected.email}</p>
-                <a href={restoSelected.website} target="_blank">
-                  {restoSelected.website}
-                </a>
-              </Title>
-              {restoSelected.photo && restoSelected.photo.images && (
-                <Main>
-                  <img src={restoSelected.photo.images.medium.url} />
-                  <p>{restoSelected.description}</p>
-                  <h2>{restoSelected.name}</h2>
-                </Main>
-              )}
+              <h2>{restoSelected.name}</h2>
+              <p>{restoSelected.address}</p>
+              <p>{restoSelected.phone}</p>
+              <p>{restoSelected.email}</p>
+              <a href={restoSelected.website} target="_blank">
+                {restoSelected.website}
+              </a>
             </Info>
-            <button
-              // navigates to form based on params and restaurant name
-              onClick={() => {
-                navigate(`/form?type=restaurant&name=${restoSelected.name}`);
-              }}
-            >
-              Book now
-            </button>
-          </Div>
+            <Book>
+              <button
+                onClick={() => {
+                  navigate(`/form?type=restaurant&name=${restoSelected.name}`);
+                }}
+              >
+                Book now
+              </button>
+            </Book>
+            <Description>{restoSelected.description}</Description>
+          </div>
         </>
       ) : (
         resto &&
         resto.map((item, id) => {
-          {
-            /* if user doesnt click on a button, this part of the code renders */
-          }
           return (
             <div key={id}>
               <Button onClick={() => handleResto(item)}>
@@ -101,7 +95,6 @@ const Restaurant = ({ search, setCoordinate, resto, setResto }) => {
                   <p>{item.price_level}</p>
                   <p>{item.rating}</p>
                 </Text>
-
                 {item.photo && item.photo.images && (
                   <div>
                     <Img src={item.photo.images.small.url} />
@@ -187,35 +180,23 @@ const Diet = styled.div`
   line-height: 0.2;
   margin: 1em 0em;
   font-family: "Montserrat", sans-serif;
+
+  @media (max-width: 768px) or (max-height: 768px) {
+    font-size: 0.7em;
+  }
 `;
 
-const Div = styled.div`
-  margin: 1em;
-  width: 30em;
+const Book = styled.div`
   position: relative;
-  bottom: 40px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  p {
-    font-size: 0.9em;
-    float: right;
-    color: black;
-    font-family: "Quicksand", sans-serif;
-    line-height: 1.5;
-  }
+  bottom: 2em;
+  left: 16em;
+  width: 6%;
 
   button {
-    position: absolute;
-    bottom: 40%;
-    right: 5em;
-    bottom: 12em;
-    float: right;
     border: none;
     background-color: #610f7f;
     color: #e3e3e3;
-    padding: 1.5em 4em;
+    padding: 0.5em 4em;
     border-radius: 1.3em;
     cursor: pointer;
 
@@ -227,70 +208,49 @@ const Div = styled.div`
   }
 `;
 
-const Title = styled.div`
-  margin-left: 2em;
-  display: flex;
-  position: absolute;
-  top: 3em;
-  left: 20em;
-  flex-direction: column;
-  width: 50%;
-  font-size: 0.7em;
-  color: grey;
-  line-height: 0.1em;
+const Info = styled.div`
+  position: relative;
+  float: right;
+  margin-right: 2em;
+  bottom: 13rem;
+  width: 40%;
 
   p {
+    color: black;
+    font-size: 0.7em;
     font-family: "Montserrat", sans-serif;
-    margin: 0;
-    margin-bottom: 0.3em;
-    margin-top: 1em;
+  }
+
+  h2 {
+    margin-bottom: 1em;
+    color: #020300;
+    line-height: 0.9;
+    font-size: 1.1em;
+    font-family: "Oswald", sans-serif;
   }
 
   a {
     color: grey;
-
     &:visited {
       color: grey;
     }
   }
 `;
 
-const Info = styled.div`
-  width: 100%;
-
+const Main = styled.div`
   img {
-    width: 13em;
-    height: 13em;
+    width: 25vh;
+    height: 25vh;
     border-radius: 0.7em;
     object-fit: cover;
     margin: 2em 1em;
   }
 `;
 
-const Main = styled.div`
-  display: flex;
+const Description = styled.p`
+  color: black;
+  font-family: "Oswald", sans-serif;
   position: relative;
-  height: 60vh;
-
-  p {
-    position: absolute;
-    top: 18em;
-    width: 30em;
-    margin-left: 0.5em;
-    font-size: 0.8em;
-    margin-top: 2.5em;
-    font-family: "Montserrat", sans-serif;
-  }
-
-  h2 {
-    margin-bottom: 5em;
-    position: absolute;
-    top: 0;
-    left: 14em;
-    color: #020300;
-    float: right;
-    line-height: 0.9;
-    font-size: 1.1em;
-    font-family: "Oswald", sans-serif;
-  }
+  bottom: 3em;
+  width: 100%;
 `;
