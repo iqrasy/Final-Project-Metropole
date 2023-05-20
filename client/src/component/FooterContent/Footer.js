@@ -7,8 +7,21 @@ import {
 } from "react-icons/sl";
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    window.alert("Thank you for subscribing to our newsletter!");
+    setEmail("");
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
   return (
     <Main>
       <Div>
@@ -29,12 +42,18 @@ const Footer = () => {
       </Icons>
       <Newsletter>
         <h4>Sign up for our weekly newsletter.</h4>
-        <Input placeholder="Email" />
-        <Arrow>
-          <button type="submit">
-            <BsArrowRightShort />
-          </button>
-        </Arrow>
+        <form onSubmit={handleNewsletterSubmit}>
+          <Input
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+          <Arrow>
+            <button type="submit">
+              <BsArrowRightShort />
+            </button>
+          </Arrow>
+        </form>
       </Newsletter>
     </Main>
   );
@@ -59,7 +78,6 @@ const Div = styled.div`
   font-size: 13px;
   position: relative;
   left: 5%;
-  /* bottom: 20px; */
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -115,6 +133,7 @@ const Arrow = styled.div`
   font-size: 2em;
 
   button {
+    cursor: pointer;
     background-color: transparent;
     border: none;
   }
