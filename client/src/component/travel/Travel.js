@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Hotel from "./Hotel";
 import Restaurant from "./Restaurant";
 import Activities from "./Activities";
-import { CiSearch } from "react-icons/ci";
 
 const Travel = ({
   coordinate,
@@ -88,11 +87,7 @@ const Travel = ({
         </Button>
       </Option>
       <SearchDiv>
-        {search.length === 0 && (
-          <Icon>
-            <CiSearch />
-          </Icon>
-        )}
+        {search.length === 0}
         <SearchBar
           type="text"
           placeholder={"    search"}
@@ -113,7 +108,7 @@ const Div = styled.div`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 1em;
   background-size: cover;
-  width: 33em;
+  width: 65vh;
   height: 77vh;
   overflow: hidden;
 `;
@@ -140,6 +135,10 @@ const Button = styled.button`
   position: relative;
   left: 12em;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  @media (max-width: 768px) or (max-height: 768px) {
+    left: 2em;
+  }
 `;
 
 const SearchBar = styled.input`
@@ -160,13 +159,6 @@ const SearchDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const Icon = styled.span`
-  position: absolute;
-  left: 9em;
-  color: grey;
-  width: 1.5rem;
 `;
 
 const Default = styled.h3`

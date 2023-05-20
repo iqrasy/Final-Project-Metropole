@@ -65,9 +65,6 @@ const Icon = styled.div`
 `;
 
 const MapDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding-left: 1em;
 `;
 

@@ -1,6 +1,10 @@
 .leaflet-container {
-  width: 40em;
-  height: 39.5em;
+  margin: 0;
+  padding: 0;
+  /* width: 40em;
+  height: 49.5em; */
+  width: 65vh;
+  height: 77vh;
   border-radius: 1em;
   z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

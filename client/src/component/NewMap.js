@@ -18,9 +18,6 @@ const NewMap = ({ coordinate }) => {
 
   return (
     <div className="map" id="map">
-      <WeatherDiv>
-        <Weather />
-      </WeatherDiv>
       <MapContainer
         center={positions.length === 2 ? positions : [45.5241, -73.6726]}
         zoom={11}
@@ -31,6 +28,9 @@ const NewMap = ({ coordinate }) => {
           position={positions.length === 2 ? positions : [45.5241, -73.6726]}
           icon={icon}
         ></Marker>
+        <WeatherDiv>
+          <Weather />
+        </WeatherDiv>
       </MapContainer>
     </div>
   );
@@ -40,7 +40,7 @@ export default NewMap;
 
 const WeatherDiv = styled.div`
   position: absolute;
-  right: 7.7em;
-  top: 1.5em;
-  z-index: 3;
+  top: 0em;
+  right: 1em;
+  z-index: 1000;
 `;

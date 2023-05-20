@@ -31,7 +31,7 @@ const Weather = () => {
     // render weather
     <Main>
       {current ? (
-        <Div>
+        <div>
           <Title>{current.name} </Title>
           {window.innerWidth > 768 ? (
             <Container>
@@ -43,7 +43,7 @@ const Weather = () => {
             </Container>
           ) : null}
           <Img src={cloud} />
-        </Div>
+        </div>
       ) : (
         <p>Loading weather</p>
       )}
@@ -73,7 +73,6 @@ const Main = styled.div`
   background-size: cover;
   height: 4.5em;
   width: 20em;
-  z-index: 5;
   font-family: "Oswald", sans-serif;
 
   @media only screen and (max-width: 768px) {
@@ -93,8 +92,6 @@ const Title = styled.h3`
     font-size: 0.8rem;
   }
 `;
-
-const Div = styled.div``;
 
 const Container = styled.div`
   display: flex;

@@ -43,16 +43,16 @@ const Footer = () => {
       <Newsletter>
         <h4>Sign up for our weekly newsletter.</h4>
         <form onSubmit={handleNewsletterSubmit}>
-          <Input
+          <input
             placeholder="Email"
             value={email}
             onChange={handleEmailChange}
           />
-          <Arrow>
+          <div>
             <button type="submit">
               <BsArrowRightShort />
             </button>
-          </Arrow>
+          </div>
         </form>
       </Newsletter>
     </Main>
@@ -108,33 +108,39 @@ const Newsletter = styled.div`
   position: absolute;
   left: 70%;
   top: 50%;
-`;
 
-const Input = styled.input`
-  position: absolute;
-  top: 70%;
-  width: 90%;
-  height: 45%;
-  border: none;
-  border-bottom: solid black 1px;
-  background-color: #e7e6f7;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-const Arrow = styled.div`
-  position: absolute;
-  top: 70%;
-  left: 90%;
-  align-items: center;
-  margin-left: 10px;
-  font-size: 2em;
-
-  button {
-    cursor: pointer;
-    background-color: transparent;
+  input {
+    position: absolute;
+    top: 70%;
+    width: 90%;
+    height: 45%;
     border: none;
+    border-bottom: solid black 1px;
+    background-color: #e7e6f7;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  div {
+    position: absolute;
+    top: 70%;
+    left: 90%;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 2em;
+
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  @media (max-width: 768px) or (max-height: 768px) {
+    h4 {
+      font-size: 0.7rem;
+    }
   }
 `;
