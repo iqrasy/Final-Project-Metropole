@@ -23,14 +23,13 @@ export default Logout;
 
 const Button = styled.button`
   font-family: "Oswald", sans-serif;
-  font-size: 1.1rem;
-  background-color: #e3e3e3;
+  background-color: transparent;
   border: none;
-  justify-content: center;
-  align-items: center;
+  color: black;
+  font-size: 0.9em;
+  width: 5em;
 
   &:hover {
-    background: #dedede;
-    border-radius: 25px;
+    cursor: pointer;
   }
 `;

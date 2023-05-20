@@ -1,16 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-
- body {
+body {
     margin: 0;
     padding: 0;
-  overflow: auto;
-  scroll-behavior: smooth;
+    overflow: auto;
+    scroll-behavior: smooth;
   }
 
-  a {
-    text-decoration: none;
+a {
+  text-decoration: none;
   }
 `;
 
