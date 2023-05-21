@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BiLeftArrowAlt } from "react-icons/bi";
+import { AppContext } from "../Context";
 
-const Restaurant = ({ search, setCoordinate, resto, setResto }) => {
+const Restaurant = ({ search }) => {
   const [restoSelected, setRestoSelected] = useState(null);
   const [isRestoSelected, setIsRestoSelected] = useState(false);
   const navigate = useNavigate();
+  const { setZoomIn, setCoordinate, resto, setResto } = useContext(AppContext);
 
   // POST request for restaurant api
   useEffect(() => {
@@ -36,6 +38,7 @@ const Restaurant = ({ search, setCoordinate, resto, setResto }) => {
     if (restaurant && restaurant.latitude && restaurant.longitude) {
       const { latitude, longitude } = restaurant;
       setCoordinate([latitude, longitude]);
+      setZoomIn(15);
     }
   };
 

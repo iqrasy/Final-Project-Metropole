@@ -4,16 +4,7 @@ import Hotel from "./Hotel";
 import Restaurant from "./Restaurant";
 import Activities from "./Activities";
 
-const Travel = ({
-  coordinate,
-  setCoordinate,
-  hotels,
-  setHotels,
-  resto,
-  setResto,
-  activities,
-  setActivities,
-}) => {
+const Travel = () => {
   const [selected, setSelected] = useState("");
   const [search, setSearch] = useState("");
 
@@ -21,35 +12,11 @@ const Travel = ({
   const handleSwitch = () => {
     switch (selected) {
       case "hotel":
-        return (
-          <Hotel
-            search={search}
-            coordinate={coordinate}
-            setCoordinate={setCoordinate}
-            hotels={hotels}
-            setHotels={setHotels}
-          />
-        );
+        return <Hotel search={search} />;
       case "restaurant":
-        return (
-          <Restaurant
-            search={search}
-            coordinate={coordinate}
-            setCoordinate={setCoordinate}
-            resto={resto}
-            setResto={setResto}
-          />
-        );
+        return <Restaurant search={search} />;
       case "activities":
-        return (
-          <Activities
-            search={search}
-            coordinate={coordinate}
-            setCoordinate={setCoordinate}
-            activities={activities}
-            setActivities={setActivities}
-          />
-        );
+        return <Activities search={search} />;
       default:
         return <Default>PLEASE CHOOSE ONE</Default>;
     }

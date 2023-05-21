@@ -47,13 +47,9 @@ const Header = () => {
           <Link to={`/account/${user}`}>
             <p>Account</p>
           </Link>
-          {isAuthenticated ? (
+          {isAuthenticated && (
             <p>
               <Logout />
-            </p>
-          ) : (
-            <p>
-              <Login />
             </p>
           )}
         </Home>

@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BiLeftArrowAlt } from "react-icons/bi";
+import { AppContext } from "../Context";
 
-const Activities = ({ search, setCoordinate, activities, setActivities }) => {
+const Activities = ({ search }) => {
   const [activitySelected, setActivitySelected] = useState(null);
   const [isActivitySelected, setIsActivitySelected] = useState(false);
   const navigate = useNavigate();
+  const { setZoomIn, setCoordinate, activities, setActivities } =
+    useContext(AppContext);
 
   // POST request for attractions api
   useEffect(() => {
@@ -27,6 +30,7 @@ const Activities = ({ search, setCoordinate, activities, setActivities }) => {
     if (attraction && attraction) {
       const { latitude, longitude } = attraction;
       setCoordinate([latitude, longitude]);
+      setZoomIn(15);
     }
   };
 

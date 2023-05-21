@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
 import { BiLeftArrowAlt } from "react-icons/bi";
+import { AppContext } from "../Context";
 
-const Hotel = ({ search, setCoordinate, hotels, setHotels }) => {
+const Hotel = ({ search }) => {
   const [selectedHotel, setSelectedHotel] = useState(null);
   const [isHotelSelected, setIsHotelSelected] = useState(false);
   const navigate = useNavigate();
+  const { setZoomIn, hotels, setHotels, setCoordinate } =
+    useContext(AppContext);
 
   const handleHotel = (hotel) => {
     setSelectedHotel(hotel);
@@ -16,6 +19,7 @@ const Hotel = ({ search, setCoordinate, hotels, setHotels }) => {
     if (hotel && hotel.map && hotel.map.latLong) {
       const { latitude, longitude } = hotel.map.latLong;
       setCoordinate([latitude, longitude]);
+      setZoomIn(15);
     }
   };
 
