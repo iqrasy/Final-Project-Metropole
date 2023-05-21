@@ -82,9 +82,6 @@ const Form = () => {
           setErrorMessage("Email does not match the one we have on file");
           throw new Error("Email does not match");
         }
-        console.log(resSelect);
-        console.log(body);
-        console.log(resSelect.data.email);
         navigate(`/reservation/${resSelect.data.reservationId}`);
       })
       .catch((error) => {
