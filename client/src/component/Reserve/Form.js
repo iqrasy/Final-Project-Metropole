@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useSearchParams } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
   // states that manage the form, selected option, navigate, and query for hotel, restaurant, activity
@@ -10,6 +12,7 @@ const Form = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useSearchParams();
   const [errorMessage, setErrorMessage] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const handleForm = (e) => {
     const key = e.target.name;
@@ -69,23 +72,19 @@ const Form = () => {
       },
       body: JSON.stringify(body),
     })
-      // extracts JSON response from the HTTP response object
       .then((res) => res.json())
-      // gets relevant info from the JSON response and sets it to selected state
       .then((resSelect) => {
+        setSelected(resSelect);
+        localStorage.setItem("reservationId", resSelect.data.reservationId);
+        localStorage.setItem("email", resSelect.data.email);
         const userEmail = localStorage.getItem("email");
-
         if (userEmail !== resSelect.data.email) {
-          // update errorMessage if email doesn't match
           setErrorMessage("Email does not match the one we have on file");
           throw new Error("Email does not match");
         }
-        setSelected(resSelect);
-        // saves id to localstorage
-        localStorage.setItem("reservationId", resSelect.data.reservationId);
-        // saves email to localstorage
-        localStorage.setItem("email", resSelect.data.email);
-        // navigates to confirmation page with the reservations information
+        console.log(resSelect);
+        console.log(body);
+        console.log(resSelect.data.email);
         navigate(`/reservation/${resSelect.data.reservationId}`);
       })
       .catch((error) => {
@@ -129,7 +128,7 @@ const Form = () => {
                 required={true}
                 onChange={handleForm}
               />
-              <Error>{errorMessage && <p>{errorMessage}</p>}</Error>
+              {/* <Error>{errorMessage && <p>{errorMessage}</p>}</Error> */}
             </div>
             <div>
               <Input
@@ -141,6 +140,13 @@ const Form = () => {
                 onChange={handleForm}
               />
             </div>
+            <StyledDatePicker
+              selected={selectedDate}
+              value={form.date}
+              onChange={(date) => setSelectedDate(date)}
+              dateFormat="yyyy-MM-dd"
+              minDate={new Date()}
+            />
             <div>
               <Select
                 name={"people"}
@@ -167,6 +173,20 @@ const Form = () => {
 };
 
 export default Form;
+
+const StyledDatePicker = styled(DatePicker)`
+  padding: 0.7em;
+  margin-bottom: 0.7em;
+  border: none;
+  border-radius: 0.5em;
+  box-shadow: inset 0 0 5px #ddd;
+  font-size: 14px;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
+`;
 
 const FormWrapper = styled.div`
   display: flex;
@@ -202,19 +222,14 @@ const Submit = styled.button`
   width: 11em;
   border-radius: 0.5em;
   padding: 0.3em;
-  background: #e3e3e3;
-  color: #020300;
   cursor: pointer;
   border: 0.01rem solid lightgrey;
-
-  &:hover {
-    background-color: #610f7f;
-    color: #e3e3e3;
-  }
+  background-color: #610f7f;
+  color: #e3e3e3;
 `;
 
 const Select = styled.select`
-  padding: 0.3em;
+  padding: 0.7em;
   margin-bottom: 0.7em;
   border: none;
   border-radius: 0.5em;
@@ -224,6 +239,7 @@ const Select = styled.select`
 
   &:focus {
     outline: none;
+    border: none;
   }
 `;
 

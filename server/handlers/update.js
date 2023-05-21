@@ -18,9 +18,9 @@ const updateRes = async (req, res) => {
     const db = client.db("final");
 
     // extracting the required fields from the req.body object
-    const { _id, givenName, surName, email, number, people } = req.body;
+    const { _id, givenName, surName, email, number, people, date } = req.body;
 
-    if (!givenName || !surName || !email || !number || !people) {
+    if (!givenName || !surName || !email || !number || !people || !date) {
       return res
         .status(400)
         .json({ status: 404, error: "Missing required fields" });
@@ -37,6 +37,7 @@ const updateRes = async (req, res) => {
           "reservations.$.email": email,
           "reservations.$.number": number,
           "reservations.$.people": people,
+          "reservations.$.date": date,
         },
       }
     );

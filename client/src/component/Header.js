@@ -11,6 +11,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRotated, setIsRotated] = useState(false);
   const { isAuthenticated, user } = useAuth0();
+  const email = localStorage.getItem("email");
 
   // handle menu rotation
   const handleClick = () => {
@@ -44,7 +45,7 @@ const Header = () => {
           <Link to="/about">
             <p>About</p>
           </Link>
-          <Link to={`/account/${user}`}>
+          <Link to={`/account/${email}`}>
             <p>Account</p>
           </Link>
           {isAuthenticated && (

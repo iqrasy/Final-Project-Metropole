@@ -12,6 +12,7 @@
     "ol": "^7.3.0",
     "openlayers": "^4.6.5",
     "react": "^18.0.0",
+    "react-datepicker": "^4.11.0",
     "react-dom": "^18.0.0",
     "react-dropzone": "^14.2.3",
     "react-icons": "^4.8.0",

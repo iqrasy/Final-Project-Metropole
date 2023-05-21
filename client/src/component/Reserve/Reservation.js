@@ -5,7 +5,6 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Reservation = () => {
   const [confirmed, setConfirmed] = useState(null);
-  // const email = localStorage.getItem("email");
   const navigate = useNavigate();
   const { email } = useParams();
 
@@ -15,6 +14,7 @@ const Reservation = () => {
       .then((res) => res.json())
       .then((resData) => {
         setConfirmed(resData.data.reservations);
+        console.log(resData.data.reservations);
       })
       .catch((error) => {
         console.log(error);
@@ -46,9 +46,6 @@ const Reservation = () => {
         <Main>
           {confirmed &&
             confirmed.map((item) => {
-              // same as confirmation
-              // checks bookingInfo based on the confirmed object(info about reservation)
-              // if statements check what type of booking it is an based on that renders the appropriate information
               let bookingInfo;
               if (item.restaurant) {
                 bookingInfo = (

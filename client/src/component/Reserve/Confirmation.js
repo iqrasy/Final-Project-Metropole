@@ -52,6 +52,8 @@ const Confirmation = () => {
     );
   }
 
+  console.log(confirmed);
+
   // booking information
   return (
     <>
@@ -69,6 +71,9 @@ const Confirmation = () => {
           {bookingInfo}
           <p>
             <span>GUEST(S):</span> {confirmed.people}
+          </p>
+          <p>
+            <span>DATE:</span> {confirmed.date}
           </p>
           <p>
             <span>EMAIL:</span> {confirmed.email}
