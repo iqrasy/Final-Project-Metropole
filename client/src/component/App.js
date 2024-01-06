@@ -34,7 +34,7 @@ const App = () => {
 						<Route path="/edit/:reservation" element={<Edit />} />
 						<Route path="/delete/:reservation" element={<Delete />} />
 					</Routes>
-					<Footer />
+					{/* <Footer /> */}
 				</BrowserRouter>
 			</AppProvider>
 		</div>

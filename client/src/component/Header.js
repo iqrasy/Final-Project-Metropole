@@ -23,8 +23,8 @@ const Header = () => {
 		<>
 			<Div>
 				<div className="title">
-					<NavLink to="/home" className="nav-link">
-						<h1>Métropole</h1>
+					<NavLink to="/home" className="header-nav-link">
+						<h1>MÉTROPOLE </h1>
 					</NavLink>
 				</div>
 				<AccountIcon
@@ -57,26 +57,19 @@ const Div = styled.div`
 	justify-content: space-between;
 	padding: 1rem;
 
-	.title {
+	.header-nav-link {
 		color: #020300;
 		font-size: 1.2rem;
 		margin: 0;
 		cursor: pointer;
-	}
-
-	.nav-link {
 		text-decoration: none;
-		padding: 0.5rem;
-		&:visited {
-			color: black;
-		}
 	}
 
-	@media only screen and (max-width: 781px) {
-		.title {
-			font-size: 1.2rem;
-			margin: 0;
-			display: block;
+	@media only screen and (max-width: 480px) {
+		.header-nav-link {
+			font-size: 1rem;
+			margin: 0 auto;
+			display: flex;
 			text-align: center;
 			justify-content: center;
 			align-items: center;
@@ -86,31 +79,38 @@ const Div = styled.div`
 
 const Menu = styled.div`
 	display: flex;
-	@media only screen and (max-width: 780px) {
+
+	.nav-link {
+		text-decoration: none;
+		padding: 0.5rem;
+
+		&:visited {
+			color: black;
+		}
+	}
+	@media only screen and (max-width: 480px) {
 		display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-		flex-direction: column;
 		position: absolute;
 		background-color: white;
+		width: 100%;
 		border-radius: 0.5rem;
 		font-size: 1rem;
-		top: 3.5em;
-		right: 1em;
-		padding: 1em;
-		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		top: 3.8rem;
+		right: 0rem;
+		justify-content: center;
+		padding: 1rem;
+		margin: 0 auto;
+		-webkit-box-shadow: 9px 9px 22px -15px rgba(97, 97, 97, 1);
+		-moz-box-shadow: 9px 9px 22px -15px rgba(97, 97, 97, 1);
+		box-shadow: 9px 9px 22px -15px rgba(97, 97, 97, 1);
 		z-index: 10;
 	}
 `;
 
 const AccountIcon = styled.button`
-	@media only screen and (min-width: 781px) {
-		display: none;
-	}
-
-	@media only screen and (max-width: 780px) {
+	display: none;
+	@media only screen and (max-width: 480px) {
 		display: block;
-		position: absolute;
-		top: 2em;
-		right: 1em;
 		z-index: 10;
 		border: none;
 		cursor: pointer;

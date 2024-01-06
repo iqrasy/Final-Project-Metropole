@@ -1,74 +1,74 @@
 import styled from "styled-components";
 import {
-  SlSocialInstagram,
-  SlSocialLinkedin,
-  SlSocialFacebook,
-  SlSocialTwitter,
+	SlSocialInstagram,
+	SlSocialLinkedin,
+	SlSocialFacebook,
+	SlSocialTwitter,
 } from "react-icons/sl";
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
+	const [email, setEmail] = useState("");
 
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    window.alert("Thank you for subscribing to our newsletter!");
-    setEmail("");
-  };
+	const handleNewsletterSubmit = (e) => {
+		e.preventDefault();
+		window.alert("Thank you for subscribing to our newsletter!");
+		setEmail("");
+	};
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+	const handleEmailChange = (event) => {
+		setEmail(event.target.value);
+	};
 
-  return (
-    <Main>
-      <Div>
-        <div>
-          <Title>Support</Title>
-          <Link to="/about">About us</Link>
-          <p>Privacy Policy</p>
-          <a>Cancelation</a>
-          <p>Payment Options</p>
-          <p>Help & FAQ</p>
-        </div>
-      </Div>
-      <Icons>
-        <SlSocialLinkedin />
-        <SlSocialInstagram />
-        <SlSocialFacebook />
-        <SlSocialTwitter />
-      </Icons>
-      <Newsletter>
-        <h4>Sign up for our weekly newsletter.</h4>
-        <form onSubmit={handleNewsletterSubmit}>
-          <input
-            placeholder="Email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-          <div>
-            <button type="submit">
-              <BsArrowRightShort />
-            </button>
-          </div>
-        </form>
-      </Newsletter>
-    </Main>
-  );
+	return (
+		<Main>
+			<Div>
+				<div>
+					<Title>Support</Title>
+					<Link to="/about">About us</Link>
+					<p>Privacy Policy</p>
+					<a>Cancelation</a>
+					<p>Payment Options</p>
+					<p>Help & FAQ</p>
+				</div>
+			</Div>
+			<Icons>
+				<SlSocialLinkedin />
+				<SlSocialInstagram />
+				<SlSocialFacebook />
+				<SlSocialTwitter />
+			</Icons>
+			<Newsletter>
+				<h4>Sign up for our weekly newsletter.</h4>
+				<form onSubmit={handleNewsletterSubmit}>
+					<input
+						placeholder="Email"
+						value={email}
+						onChange={handleEmailChange}
+					/>
+					<div>
+						<button type="submit">
+							<BsArrowRightShort />
+						</button>
+					</div>
+				</form>
+			</Newsletter>
+		</Main>
+	);
 };
 
 export default Footer;
 
 const Main = styled.div`
-  background-color: #e7e6f7;
+	/* background-color: #e7e6f7;
   font-family: "Montserrat", sans-serif;
-  position: relative;
+  position: relative; */
 `;
 
 const Div = styled.div`
-  display: flex;
+	/* display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -82,11 +82,11 @@ const Div = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: flex-start;
-  }
+  } */
 `;
 
 const Icons = styled.div`
-  display: flex;
+	/* display: flex;
   flex-direction: column;
   position: absolute;
   top: 10%;
@@ -94,16 +94,16 @@ const Icons = styled.div`
   justify-content: space-between;
   font-size: 20px;
   height: 70%;
-  cursor: pointer;
+  cursor: pointer; */
 `;
 
 const Title = styled.h4`
-  font-size: 1.5em;
-  font-weight: bolder;
+	/* font-size: 1.5em;
+  font-weight: bolder; */
 `;
 
 const Newsletter = styled.div`
-  display: flex;
+	/* display: flex;
   flex-direction: column;
   position: absolute;
   left: 70%;
@@ -142,5 +142,5 @@ const Newsletter = styled.div`
     h4 {
       font-size: 0.7rem;
     }
-  }
+  } */
 `;
