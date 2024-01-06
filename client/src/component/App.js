@@ -3,93 +3,42 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Home from "./Home";
 import Confirmation from "./Reserve/Confirmation";
 import Main from "./Main";
-import About from "./FooterContent/About";
+import About from "./About";
 import GlobalStyle from "./GlobalStyle";
-import Layout from "./Layout";
 import Form from "./Reserve/Form";
 import Account from "./Account";
 import Edit from "./Reserve/Edit";
 import Delete from "./Reserve/Delete";
 import { AppProvider } from "./Context";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const App = () => {
-  //routes
-  return (
-    <div>
-      <AppProvider>
-        <BrowserRouter>
-          <GlobalStyle />
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route
-              path="/home"
-              element={
-                <Layout>
-                  <Home />
-                </Layout>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <Layout>
-                  <About />
-                </Layout>
-              }
-            />
-            <Route
-              path="/map"
-              element={
-                <Layout>
-                  <Map />
-                </Layout>
-              }
-            />
-            <Route
-              path="/reservation/:reservation"
-              element={
-                <Layout>
-                  <Confirmation />
-                </Layout>
-              }
-            />
-            <Route
-              path="/form"
-              element={
-                <Layout>
-                  <Form />
-                </Layout>
-              }
-            />
-            <Route
-              path="/account/:email"
-              element={
-                <Layout>
-                  <Account />
-                </Layout>
-              }
-            />
-            <Route
-              path="/edit/:reservation"
-              element={
-                <Layout>
-                  <Edit />
-                </Layout>
-              }
-            />
-            <Route
-              path="/delete/:reservation"
-              element={
-                <Layout>
-                  <Delete />
-                </Layout>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-      </AppProvider>
-    </div>
-  );
+	return (
+		<div>
+			<AppProvider>
+				<BrowserRouter>
+					<GlobalStyle />
+					<Header />
+					<Routes>
+						<Route path="/" element={<Main />} />
+						<Route path="/home" element={<Home />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/map" element={<Map />} />
+						<Route
+							path="/reservation/:reservation"
+							element={<Confirmation />}
+						/>
+						<Route path="/form" element={<Form />} />
+						<Route path="/account/:email" element={<Account />} />
+						<Route path="/edit/:reservation" element={<Edit />} />
+						<Route path="/delete/:reservation" element={<Delete />} />
+					</Routes>
+					<Footer />
+				</BrowserRouter>
+			</AppProvider>
+		</div>
+	);
 };
 
 export default App;
