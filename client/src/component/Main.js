@@ -3,8 +3,6 @@ import Login from "./Login";
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
-// main page where user can login or sign up with auth0
-// user must have an account to use the website
 const Main = () => {
   return (
     <>

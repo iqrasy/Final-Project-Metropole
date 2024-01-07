@@ -1,0 +1,145 @@
+.container {
+	max-height: 90vh;
+	transition: max-height 0.5s ease-in-out;
+
+	&::-webkit-scrollbar {
+		width: 0.4em;
+	}
+
+	&::-webkit-scrollbar-track {
+		border-radius: 1em;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+		background-color: white;
+		border-radius: 1rem;
+	}
+}
+
+.image-container {
+	width: 20vh;
+	height: 20vh;
+	border-radius: 0.7rem;
+	object-fit: cover;
+	margin: 2rem 0.5rem;
+}
+
+.info {
+	position: relative;
+	float: right;
+	bottom: 13rem;
+	width: 40%;
+}
+
+.a-tag {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+
+	&.visited {
+		color: grey;
+	}
+}
+
+.resto-info {
+	position: relative;
+	float: right;
+	bottom: 13rem;
+	width: 40%;
+	margin-right: 3.5rem;
+}
+
+.h-two {
+	margin-bottom: 1rem;
+	color: #020300;
+	line-height: 0.9;
+	font-size: 1rem;
+}
+
+.infor {
+	line-height: 1.2;
+}
+
+.book-button {
+	position: relative;
+	left: 1.3rem;
+	width: 23.5rem;
+	border: none;
+	outline: none;
+	background-color: #610f7f;
+	color: #e3e3e3;
+	padding: 1rem 4rem;
+	border-radius: 1.3rem;
+	cursor: pointer;
+
+	&.disabled {
+		background-color: white;
+		color: black;
+		cursor: not-allowed;
+	}
+}
+
+.description {
+	color: black;
+	position: relative;
+	max-width: 100vh;
+	margin: 1rem;
+}
+
+/* second part */
+
+.item-button {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 95%;
+	margin: 1rem;
+	border-radius: 0.8rem;
+	background-color: var(--bg-200);
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+	cursor: pointer;
+
+	img {
+		width: 10rem;
+		height: 9rem;
+		border-radius: 0.4rem;
+		margin: 0.3em;
+		object-fit: cover;
+	}
+}
+
+.container-div {
+	height: 20vh;
+	font-size: 0.8em;
+	display: flex;
+	margin: 0.5em;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.name {
+	text-align: left;
+	max-width: 75%;
+	margin: 0.1rem;
+	font-size: 1rem;
+	flex-wrap: wrap;
+}
+
+.diet {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	line-height: 1.3;
+	margin: 1em 0em;
+}
+
+.display-img {
+	width: 15vh;
+	height: 15vh;
+	border-radius: 0.4rem;
+	margin: 0.3em;
+	object-fit: cover;
+}

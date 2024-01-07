@@ -6,10 +6,10 @@ const Home = () => {
 	return (
 		<>
 			<Main>
-				{/* <TravelDiv>
-          <Travel />
-        </TravelDiv>
-        <MapDiv>
+				<TravelDiv>
+					<Travel />
+				</TravelDiv>
+				{/* <MapDiv>
           <NewMap />
         </MapDiv> */}
 			</Main>
@@ -24,6 +24,7 @@ const MapDiv = styled.div`
 `;
 
 const Main = styled.div`
+	margin: 2rem;
 	/* width: 100%;
   height: 90vh;
   display: flex;

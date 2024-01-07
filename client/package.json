@@ -1,41 +1,41 @@
 {
-  "name": "client",
-  "proxy": "http://localhost:4000",
-  "version": "0.1.0",
-  "description": "",
-  "keywords": [],
-  "main": "index.js",
-  "dependencies": {
-    "@auth0/auth0-react": "^2.0.1",
-    "leaflet": "^1.8.0",
-    "moment": "^2.29.4",
-    "ol": "^7.3.0",
-    "openlayers": "^4.6.5",
-    "react": "^18.0.0",
-    "react-datepicker": "^4.11.0",
-    "react-dom": "^18.0.0",
-    "react-dropzone": "^14.2.3",
-    "react-icons": "^4.8.0",
-    "react-leaflet": "^4.2.1",
-    "react-openlayers": "^0.3.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.5"
-  },
-  "resolutions": {
-    "react-error-overlay": "6.0.9"
-  },
-  "scripts": {
-    "start:client": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "author": "",
-  "license": "ISC",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
-  ]
+	"name": "client",
+	"proxy": "http://localhost:4000",
+	"version": "0.1.0",
+	"description": "",
+	"keywords": [],
+	"main": "index.js",
+	"dependencies": {
+		"@auth0/auth0-react": "^2.0.1",
+		"leaflet": "^1.8.0",
+		"moment": "^2.29.4",
+		"ol": "^7.3.0",
+		"openlayers": "^4.6.5",
+		"react": "^18.0.0",
+		"react-datepicker": "^4.11.0",
+		"react-dom": "^18.0.0",
+		"react-dropzone": "^14.2.3",
+		"react-icons": "^4.8.0",
+		"react-leaflet": "^4.2.1",
+		"react-openlayers": "^0.3.0",
+		"react-router-dom": "^6.3.0",
+		"react-scripts": "5.0.1",
+		"styled-components": "^5.3.5"
+	},
+	"resolutions": {
+		"react-error-overlay": "6.0.9"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"author": "",
+	"license": "ISC",
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not op_mini all"
+	]
 }
